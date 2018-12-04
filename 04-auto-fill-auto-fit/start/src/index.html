@@ -1,0 +1,40 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Overment</title>
+    <link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+    <div class="page">
+        <div class="container">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+    </div>
+
+    <style type="text/css">
+        body { font-size: 1.5rem; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;}
+        .box { height: 100px; background: #ea47f3; color: #fff; text-align: center; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .page { width: 100%; }
+        .container {
+            background: #222;
+            height: 200px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            grid-template-rows: repeat(2, 1fr);
+            grid-gap: 5px;
+        }
+
+    </style>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
