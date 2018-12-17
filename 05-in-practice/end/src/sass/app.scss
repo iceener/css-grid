@@ -1,0 +1,75 @@
+body { background: #f4f4f4; font-family: sans-serif; }
+h1 { text-align: center; }
+.container { max-width: 1000px; margin: 20px auto 0; }
+.grid-item { background: #ff00fb; color: #fff; display: flex; justify-content: center; align-items: center; text-align: center; font-weight: bold; font-size: 2rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+  padding: 8px;
+  background: #fff;
+}
+.grid-item { display: none; }
+.grid-item img { width: 100%; }
+.grid-item-1, .grid-item-2, .grid-item-3, .grid-item-7 { display: flex; }
+.grid-item-1 { grid-column: 1 / 2; }
+.grid-item-2 { grid-column: 2 / 3; }
+.grid-item-7 { grid-column: 1 / 2; grid-row: 2 / 3; }
+.grid-item-3 { grid-column: 2 / 3; grid-row: 2 / 3; }
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .grid-item { display: flex; }
+  .grid-item-11 { display: none; }
+  
+  .grid-item-1 { grid-column: 1 / 4; grid-row: 1 / 3; }
+  .grid-item-2 { grid-column: 4 / 7; grid-row: 1 / 3; }
+  .grid-item-7 { grid-column: 1 / 4; grid-row: 3 / 5; }
+  .grid-item-4 { grid-column: 4 / 7; grid-row: 3 / 5; }
+
+  .grid-item-5 { grid-column: 1 / 3; grid-row: 5 / 6; }
+  .grid-item-9 { grid-column: 3 / 5; grid-row: 5 / 6; }
+  .grid-item-8 { grid-column: 5 / 7; grid-row: 5 / 6; }
+  .grid-item-6 { grid-column: 1 / 3; grid-row: 6 / 7; }
+  .grid-item-10 { grid-column: 3 / 5; grid-row: 6 / 7; }
+  .grid-item-3 { grid-column: 5 / 7; grid-row: 6 / 7; }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    padding: 4px;
+    grid-template-columns: repeat(5, 192px);
+    grid-template-rows: repeat(5, 112px);
+    grid-template-areas:
+            "box-1 box-1 box-1 box-2 box-2"
+            "box-1 box-1 box-1 box-2 box-2"
+            "box-1 box-1 box-1 box-3 box-4"
+            "box-5 box-6 box-7 box-7 box-8"
+            "box-9 box-10 box-7 box-7 box-11";
+  }
+  
+  .grid-item { overflow: hidden; }
+  .grid-item-1 { grid-area: box-1 }
+  .grid-item-2 { grid-area: box-2 }
+  .grid-item-3 { grid-area: box-3 }
+  .grid-item-4 { grid-area: box-4 }
+  .grid-item-5 { grid-area: box-5 }
+  .grid-item-6 { grid-area: box-6 }
+  .grid-item-7 { grid-area: box-7 }
+  .grid-item-8 { grid-area: box-8 }
+  .grid-item-9 { grid-area: box-9 }
+  .grid-item-10 { grid-area: box-10 }
+  .grid-item-11 { grid-area: box-11; display: flex; }
+  .grid-item-12 { grid-area: box-12 }
+}
+
+@media (min-width: 1680px) {
+  .container { max-width: 1300px; }
+  .grid {
+    grid-template-columns: repeat(5, 252px);
+    grid-template-rows: repeat(5, 146px);
+  }
+}
